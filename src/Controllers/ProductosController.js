@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import * as fs from 'fs'
+import path from 'path';
 
 const esquema = new mongoose.Schema({
     nombre:String,marca:String,descripcion:String,cantidad:Number,imagen:String,
@@ -94,7 +95,8 @@ const validar = (nombre,marca,descripcion,cantidad,imagen,sevalida) => {
         errors.push('Selecciona una imagen en formato jpg, jpeg o png')
     }else{
         if (errors!='') {
-            fs.unlinkSync('./public/uploads/'+imagen.filename)
+            let usersPath = path.join(process.cwd(), './public/uploads/'+imagen.filename);
+            fs.unlinkSync(usersPath)
         }
     }
     return errors
