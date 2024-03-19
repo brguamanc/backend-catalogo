@@ -19,6 +19,11 @@ app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.static('public'))
 app.use(rutasProductos)
+app.get('/',(req,res)=>{
+  res.send({"message":"Welcome to my rest-api"})
+  
+})
+
 
 app.use((req,res)=>{
     res.status(404).json({status:false,errors:'Not found'})
