@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(express.static('public'))
 app.use(rutasProductos)
 app.get('/',(req,res)=>{
-  res.send({"message":"Welcome to my rest-api"})
+  res.send({"message":"Bienvenido"})
   
 })
 
