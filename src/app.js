@@ -2,7 +2,7 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from  'cors'
 import mongoose from 'mongoose'
-import { DB_URL ,DB_DATABASE } from './config.js'
+import { DB_URL } from './config.js'
 import rutasProductos from './Routes/Productos.routes.js'
 
 mongoose.connect(DB_URL)
